@@ -17,13 +17,7 @@ private:
 
 public:
 	Board(unsigned int _size, std::vector<Player*>* _players, Coordinate chest) :size(_size), players(_players), chest(chest){}
-	~Board() {
-		for (Player* player : *players)
-			delete player;
-
-		players->clear();
-		delete players;
-	}
+	~Board() =default;
 	/**
 	 * @return true if the coordinate is in the board limits, false otherwise.
 	 */
